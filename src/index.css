@@ -5,6 +5,11 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url('./space2.jpg');
+  background-size: auto;
+  background-repeat: repeat-y;
+  margin-left: 1vw;
+  margin-right: 1vw;
 }
 
 code {

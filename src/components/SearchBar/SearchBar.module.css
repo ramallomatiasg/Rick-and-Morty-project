@@ -1,0 +1,26 @@
+.SearchBar {
+	display: flex;
+	justify-content: space-evenly;
+	width: 30%;
+	height: 2rem;
+	margin: 0 auto;
+	margin-bottom: 40px;
+	padding: 10px;
+	border: 2px solid rgb(0, 0, 0);
+	border-radius: 20px;
+	background-color: rgb(66, 0, 209);
+	align-items: center;
+}
+
+.input {
+	flex-grow: 2;
+	margin-right: 30px;
+	border-radius: 7px;
+	justify-content: flex-start;
+}
+
+.SearchBar button {
+	font-family: 'Candara' , Arial, sans-serif; 
+	font-size: 18px;
+	border-radius: 8px;
+}
