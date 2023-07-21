@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from "./SearchBar.module.css"
 
-export default function SearchBar({ onSearch, handleChange, id }) {
+export default function SearchBar({ onSearch, handleChange, id, onAddRandomCharacter }) {
   return (
     <div className={styles.SearchBar}>
       <input
@@ -14,6 +14,7 @@ export default function SearchBar({ onSearch, handleChange, id }) {
       <button className={styles.button} onClick={onSearch}>
         Agregar
       </button>
+      <button className={styles.button} onClick={onAddRandomCharacter}>Agregar personaje random</button>
     </div>
   );
 };

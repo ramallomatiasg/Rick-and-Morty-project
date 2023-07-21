@@ -5,9 +5,9 @@ import { Link } from "react-router-dom";
 export default function Nav({ onAddRandomCharacter }) {
 	return (
 	<nav className={styles.Nav}>
-		<Link to="/home">Home</Link>
-		<Link to="/about">About</Link>
-		<button onClick={onAddRandomCharacter}>Agregar personaje random</button>
+		<Link to="/home" className={styles.btn}>Home</Link>
+		<Link to="/about" className={styles.btn}>About</Link>
+		<Link to='/favorites' className={styles.btn}>Favorites</Link>
 	</nav>
 	);
 };

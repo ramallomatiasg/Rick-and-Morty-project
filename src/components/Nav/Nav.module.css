@@ -1,13 +1,68 @@
 .Nav {
-	display: flex;
-	justify-content: space-evenly;
-	width: 10%;
-	height: 2rem;
-	margin: 0 auto;
-	margin-bottom: 2px;
+    display: flex;
+    justify-content: space-evenly;
+    width: 10%;
+    height: 2rem;
+    margin: 0 auto;
+    margin-bottom: 2px;
+    padding: 15px;
+    /* border: 2px solid rgb(0, 0, 0); */
+    /* border-radius: 20px; */
+    /* background-color: rgba(66, 0, 209, 0.4); */
+    align-items: center;
+}
+
+/* .btn {
 	padding: 10px;
-	border: 2px solid rgb(0, 0, 0);
-	border-radius: 20px;
-	background-color: rgb(66, 0, 209);
-	align-items: center;
+	justify-content: space-around;
+	color: white;
+} */
+
+.btn {
+    margin: 13px;
+    display: grid;
+    min-width: 176px;
+    height: 28px;
+    color: #fff;
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    /* display: inline-block; */
+    outline: none;
+    border-radius: 5px;
+    border: 2px solid #0000003b;
+    background: #4433ff;
+    align-content: center;
+	box-shadow: 0px 0px 6px 5px black;
+}
+
+.btn:hover {
+	background: #fff;
+	color: #4433ff
+}
+
+.btn1 {
+	min-width: 261px;
+	height: 35px;
+	color: #fff;
+	padding: 5px 10px;
+	font-weight: bold;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	position: fixed;
+	display: inline-block;
+	outline: none;
+	border-radius: 5px;
+	border: 2px solid #0000003b;
+	background: #4433ff;
+	justify-content: center;
+	text-align: center;
+
+}
+
+.btn1:hover {
+	background: #fff;
+	color: #4433ff
 }

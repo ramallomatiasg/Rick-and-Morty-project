@@ -5,9 +5,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url('./space2.jpg');
-  background-size: auto;
-  background-repeat: repeat-y;
+  background-image: url('./backfix.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   margin-left: 1vw;
   margin-right: 1vw;
 }

@@ -1,0 +1,13 @@
+.form{
+    display: inline-flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(66, 0, 209, 0.4);
+	color: white;
+    width: 40vw;
+	border: 2px solid rgb(0, 0, 0);
+	border-radius: 20px;
+    margin-top: 15vw;
+}

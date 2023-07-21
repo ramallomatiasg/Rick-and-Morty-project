@@ -1,18 +1,47 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./App.css";
-import Card from "./components/Card/Card.jsx";
 import Cards from "./components/Cards/Cards.jsx";
-import SearchBar from "./components/SearchBar/SearchBar.jsx";
 import Nav from "./components/Nav/Nav.jsx";
-import Title from "./components/Title/Title.jsx";
 import About from "./components/About/About.jsx";
 import Detail from "./components/Detail/Detail.jsx";
-import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import Form from "./components/Form/Form";
+import Favorites from "./components/Favorites/Favorites";
+import { BrowserRouter as Router, Routes, Route, useLocation, Link, useNavigate} from "react-router-dom";
+import { Card } from "./components/Card/Card";
 
 function App() {
   const [characters, setCharacters] = useState([]);
   const [id, setId] = useState("");
+
+  const [access, setAccess] = useState(false);
+  const EMAIL = "example@gmail.com";
+  const PASSWORD = "Password12";
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    !access && navigate("/");
+  }, [access]);
+
+  function login(userData) {
+    if (userData.password === PASSWORD && userData.email === EMAIL) {
+      setAccess(true);
+      navigate('/home');
+    }
+  }
+
+  const logout = () => {
+    setAccess(false);
+    navigate("/");
+  };
+
+  const renderNav = () => {
+    if (location.pathname !== "/") {
+      return (
+        <Nav onAddRandomCharacter={onAddRandomCharacter} />
+      );
+    }
+  };
 
   const handleChange = (event) => {
     setId(event.target.value);
@@ -62,15 +91,51 @@ function App() {
 
   return (
     <div className="App">
-      <div>
-        <Title />
-      </div>
-      <Nav onAddRandomCharacter={onAddRandomCharacter} />
-      <SearchBar onSearch={onSearch} handleChange={handleChange} id={id} />
       <Routes>
-        <Route path="/about" element={<About />} />
-        <Route path="/detail/:id" element={<Detail />} />
-        <Route path="/home" element={<Cards characters={characters} onClose={onClose} />} />
+        <Route path="/" element={<Form login={login} />} />
+        <Route
+          path="/about"
+          element={
+            <>
+              {renderNav()}
+              <About />
+            </>
+          }
+        />
+        <Route
+          path="/detail/:id"
+          element={
+            <>
+              {renderNav()}
+              <Detail />
+            </>
+          }
+        />
+        <Route
+          path="/home"
+          element={
+            <>
+              {renderNav()}
+              <Cards
+                characters={characters}
+                onClose={onClose}
+                onSearch={onSearch}
+                handleChange={handleChange}
+                id={id}
+                onAddRandomCharacter={onAddRandomCharacter}
+              />
+            </>
+          }
+        />
+        <Route
+          path="/favorites"
+          element={
+            <>
+              {renderNav()}
+              <Favorites  onClose={onClose} />
+            </>
+          }
+        />
       </Routes>
     </div>
   );

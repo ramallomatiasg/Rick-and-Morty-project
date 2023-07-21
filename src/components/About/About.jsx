@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+import styles from "./About.module.css"
 
 const About = () => {
   const { id } = useParams();
@@ -21,11 +22,8 @@ const About = () => {
   }, [id]);
 
   return (
-    <div>
-      <h2>About Character</h2>
-      <p>Name: {character.name}</p>
-      <p>Status: {character.status}</p>
-      {/* Resto de la información del personaje */}
+    <div className={styles.about}>
+      <h2>Esta página fue creada por Matias Ramallo durante el cursado del M2 de Henry!</h2>
     </div>
   );
 };

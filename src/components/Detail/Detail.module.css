@@ -1,0 +1,20 @@
+.detail{
+	/* justify-content: center;
+	align-items: center; */
+	margin-top: 80px;
+	margin-bottom: 20px;
+	width: calc(18vw + 5px);
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+	border-radius: 2em;
+	border: 2px solid black;
+	font-size: medium;
+	color: whitesmoke;
+	background-color: rgba(66, 0, 209, 0.555);
+	display: block;
+	font-family: 'Candara';
+	box-shadow: 12px 1px 19px #209d15d5, -4px -14px 21px #209d15d5, -6px 1px 19px #209d15d5, 0px 10px 21px #209d15d5;
+	position: fixed;
+	top: 35%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
