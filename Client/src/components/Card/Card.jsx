@@ -8,27 +8,28 @@ import { connect } from "react-redux";
 import { useState, useEffect } from "react";
 
 export function Card({ character, onClose, favorite, addFav, removeFav }) {
+  
   const [isFav, setIsFav] = useState(false);
+  const { id, name, image, status, species, gender, origin } = character;
 
   useEffect(() => {
     favorite.forEach((fav) => {
-      if (fav.id === character.id) {
+      if (fav.id === id) {
         setIsFav(true);
       }
     });
-  }, [favorite, character.id]);
+  }, [favorite]);
 
   function handleFavorite() {
     if (!isFav) {
       setIsFav(true);
       addFav({ name, status, species, gender, origin, image, id });
-    } else {
+    } else if (isFav) {
       setIsFav(false);
-      removeFav(character.id);
+      removeFav(id);
     }
   }
 
-  const { id, name, image, status, species, gender, origin } = character;
 
   return (
     <div className={styles.container}>
@@ -55,9 +56,9 @@ export function Card({ character, onClose, favorite, addFav, removeFav }) {
   );
 }
 
-function mapStateToProps(state) {
+function mapStateToProps(isFav) {
   return {
-    favorite: state.favs,
+    favorite: isFav.favs,
   };
 }
 

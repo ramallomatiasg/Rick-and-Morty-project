@@ -11,9 +11,7 @@ export default function SearchBar({ onSearch, handleChange, id, onAddRandomChara
         value={id}
         onChange={handleChange}
       />
-      <button className={styles.button} onClick={onSearch}>
-        Agregar
-      </button>
+      <button className={styles.button} onClick={()=>onSearch(id)}>Agregar</button>
       <button className={styles.button} onClick={onAddRandomCharacter}>Agregar personaje random</button>
     </div>
   );

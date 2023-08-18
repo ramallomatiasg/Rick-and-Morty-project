@@ -1,7 +1,7 @@
 import Card from "../Card/Card";
 import { connect, useDispatch } from "react-redux";
 import { useState } from "react";
-import { removeFav, addFav, filter, sort } from "../../redux/actions";
+import { filter, sort } from "../../redux/actions";
 import styles from "./Favorites.module.css"
 
 
@@ -59,12 +59,11 @@ function Favorites({favorites, onClose}) {
         
         </>
     )
-   
 }
 
-export function mapStateToProps(state) {
+export function mapStateToProps(isFav) {
     return {
-        favorites: state.favs
+        favorites: isFav.favs
     }
 }
 

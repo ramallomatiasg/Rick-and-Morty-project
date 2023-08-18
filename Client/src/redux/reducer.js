@@ -8,25 +8,22 @@ const reducer = (state = initialState, action) => {
         case 'ADD_FAV':
             return { ...state, favs: action.payload, allCharacters: action.payload };
         case 'REMOVE_FAV':
-            return { ...state, favs: action.payload };
+            return { ...state, favs: action.payload, allCharacters: action.payload };
         case 'FILTER':
             return {
                 ...state,
                 favs: state.allCharacters.filter((fav) => fav.gender === action.payload)
             }
-        case 'SORT':
-        let sorted
-            if(action.payload === 'A') {
-                sorted = state.allCharacters.sort((a, b) => a.id > b.id ? 1 : -1)
-            } else if(action.payload === 'D'){
-                sorted = state.allCharacters.sort((a, b) => a.id < b.id ? 1 : -1)
-            } else {
-                sorted = state.allCharacters
-            }
-            return {
-                ...state,
-                favs: [...sorted]
-            }
+            case "SORT":
+                const orden= [...state.favs]
+                orden.sort((a,b)=>{
+                    if(action.payload==="A"){
+                        return a.id - b.id
+                    } else if (action.payload === "D") { // Orden descendente
+                        return b.id - a.id;
+                    }
+                })
+                return{...state, favs: orden}
         default:
             return state
     }
